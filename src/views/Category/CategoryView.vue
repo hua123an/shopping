@@ -1,6 +1,4 @@
 <script setup>
-import {ref , onMounted} from "vue"
-import {onBeforeRouteUpdate, useRoute} from "vue-router";
 import GoodsItem from "@/views/Home/components/goodsItem.vue";
 import {useBanner} from "@/views/Category/composables/useBanner";
 import {useCategory} from "@/views/Category/composables/useCategory";
