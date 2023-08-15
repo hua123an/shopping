@@ -33,7 +33,6 @@ const doLogin = () => {
   const {account , password} = userInfo.value
   formRef.value.validate(async (valid) => {
     if (valid) {
-      // TODO LOGIN
     await  userStore.getUserInfo({account , password})
       // 1. 提示用户
       ElMessage({ type: 'success', message: '登录成功' })
