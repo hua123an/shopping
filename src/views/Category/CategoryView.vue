@@ -5,19 +5,6 @@ import GoodsItem from "@/views/Home/components/goodsItem.vue";
 import {useBanner} from "@/views/Category/composables/useBanner";
 import {useCategory} from "@/views/Category/composables/useCategory";
 const {categoryData} =  useCategory()
-// get category data
-// const categoryData = ref({})
-// const route=  useRoute()
-// const getCategoryList = async (id = route.params.id) => {
-//   const res = await getCategoryAPI(id)
-//   categoryData.value = res.result
-// }
-// onMounted(() => getCategoryList())
-// goal : when router params change , get new data of categoryList
-// achieve router guard
-// onBeforeRouteUpdate((to) => {
-//   getCategoryList(to.params.id)
-// })
 // getBannerList
 const {bannerList} = useBanner()
 
@@ -46,7 +33,7 @@ const {bannerList} = useBanner()
         <h3>全部分类</h3>
         <ul>
           <li v-for="i in categoryData.children" :key="i.id">
-            <RouterLink to="/">
+            <RouterLink :to="`/category/sub/${i.id}`">
               <img :src="i.picture" />
               <p>{{ i.name }}</p>
             </RouterLink>
