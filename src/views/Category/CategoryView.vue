@@ -1,4 +1,5 @@
 <script setup>
+import {RouterLink} from "vue-router";
 import GoodsItem from "@/views/Home/components/goodsItem.vue";
 import {useBanner} from "@/views/Category/composables/useBanner";
 import {useCategory} from "@/views/Category/composables/useCategory";
@@ -32,19 +33,22 @@ const {bannerList} = useBanner()
         <ul>
           <li v-for="i in categoryData.children" :key="i.id">
             <RouterLink :to="`/category/sub/${i.id}`">
-              <img :src="i.picture" />
+              <img :src="i.picture" alt="" />
               <p>{{ i.name }}</p>
             </RouterLink>
           </li>
         </ul>
       </div>
       <div class="ref-goods" v-for="item in categoryData.children" :key="item.id">
+
         <div class="head">
           <h3>- {{ item.name }}-</h3>
         </div>
         <div class="body">
-          <GoodsItem v-for="good in item.goods" :goods="good" :key="good.id" />
+            <GoodsItem v-for="good in item.goods" :goods="good" :key="good.id" @click="$router.replace(`/detail/${good.id}`)"/>
+
         </div>
+
       </div>
 
     </div>
