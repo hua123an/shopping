@@ -24,12 +24,32 @@ const router = createRouter({
           path : "detail/:id",
           name : "detail",
           component : () => import("@/views/detail/detailView.vue")
-        }
+        },
+        {
+          path : 'cartlist',
+          name : 'cartlist',
+          component : () => import('@/views/CartList/CartListView.vue')
+        },
+        {
+          path : 'checkout',
+          name : 'checkout',
+          component  : () => import('@/views/Checkout/CheckoutView.vue')
+        },
+        {
+          path : 'pay',
+          name : 'pay',
+          component : () => import('@/views/pay/PayView.vue')
+        },
+        {
+          path : 'paycallback',
+          name : 'paycallback',
+          component : () => import('@/views/payCallback/PayCallBackView.vue')
+        },
       ]
     },
     {
       path : "/login",
-      component : () => import("@/views/login/login.vue")
+      component : () => import("@/views/login/LoginView.vue")
     }
   ],
   // router behavior to scroll to top when navigating between routes

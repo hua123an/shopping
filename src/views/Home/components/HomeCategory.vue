@@ -1,5 +1,5 @@
 <script setup>
-import {useCategoryStore} from "@/stores/category";
+import {useCategoryStore} from "@/stores/categoryStore";
 
 const categoryStore = useCategoryStore()
 
@@ -16,7 +16,7 @@ const categoryStore = useCategoryStore()
         <div class="layer">
           <h4>分类推荐 <small>根据您的购买或浏览记录推荐</small></h4>
           <ul>
-            <li v-for="i in item.goods" :key="i.id">
+            <li v-for="i in item.goods" :key="i.id" @click="$router.replace(`/detail/${i.id}`)">
               <RouterLink to="/">
                 <img :src="i.picture" alt="" />
                 <div class="info">

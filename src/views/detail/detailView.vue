@@ -161,9 +161,9 @@ const addCart = () => {
             <!-- 24热榜+专题推荐 -->
             <div class="goods-aside">
 <!--              24小时-->
-              <hot :hot-type="1"/>
+              <hot :hot-type="1" />
 <!--              周-->
-              <hot :hot-type="2"/>
+              <hot :hot-type="2" />
 
 
             </div>
