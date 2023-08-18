@@ -12,6 +12,7 @@ import HomeHot from "@/views/Home/components/HomeHot.vue";
   </div>
   <HomeNew />
   <HomeHot />
+
 </template>
 
 <style scoped>

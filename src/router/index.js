@@ -45,12 +45,29 @@ const router = createRouter({
           name : 'paycallback',
           component : () => import('@/views/payCallback/PayCallBackView.vue')
         },
+        {
+          path : '/member',
+          name : 'member',
+          component : () => import("@/views/member/MemberView.vue"),
+          children : [
+            {
+              path : '',
+              name : 'userinfo',
+              component : () => import("@/views/member/components/UserInfo.vue")
+            },
+            {
+              path : 'order',
+              name : 'order',
+              component : () => import("@/views/member/components/UserOrder.vue")
+            }
+          ]
+        }
       ]
     },
     {
       path : "/login",
       component : () => import("@/views/login/LoginView.vue")
-    }
+    },
   ],
   // router behavior to scroll to top when navigating between routes
   scrollBehavior(){
