@@ -6,8 +6,8 @@ import {useRouter} from "vue-router";
 import {useUserStore} from "@/stores/userStore";
 const router = useRouter()
 const userInfo = ref({
-  account : "12056258282 ",
-  password : "hm#qd@23!",
+  account : "1311111111 ",
+  password : "123456",
   agree : true
 })
 const rules = {
@@ -37,7 +37,7 @@ const doLogin = () => {
       // 1. 提示用户
       ElMessage({ type: 'success', message: '登录成功' })
       // 2. 跳转首页
-     router.replace({path : "/"})
+     await router.replace({path: "/"})
     }
   })
 }
