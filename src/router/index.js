@@ -68,6 +68,10 @@ const router = createRouter({
       path : "/login",
       component : () => import("@/views/login/LoginView.vue")
     },
+    {
+      path : '/register',
+      component : () => import("@/views/register/register.vue")
+    }
   ],
   // router behavior to scroll to top when navigating between routes
   scrollBehavior(){

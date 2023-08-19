@@ -34,3 +34,26 @@ export const getUserOrder = (params) => {
         params
     })
 }
+//register api
+export const getRegisterAPI = async ({account , mobile , password , code}) => {
+    return httpInstance({
+        url : "/register",
+        method : "POST",
+        headers : {'content-type' : 'application/json'},
+        data : {
+            account,
+            mobile,
+            password,
+            code
+        }
+    })
+}
+export const getCodeAPI = async ({mobile}) => {
+    return httpInstance({
+        url : `/code`,
+        method : "GET",
+        data : {
+            mobile
+        }
+    })
+}
