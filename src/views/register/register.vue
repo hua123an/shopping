@@ -4,13 +4,13 @@ import 'element-plus/theme-chalk/el-message.css'
 import {ElMessage} from "element-plus";
 import {useRouter} from "vue-router";
 import {useUserStore} from "@/stores/userStore";
-import {getCodeAPI, getRegisterAPI} from "@/apis/user";
 const router = useRouter()
+// form object
 const userInfo = ref({
-  account : " ",
-  password : "",
-  mobile : '',
-  code : '',
+  account : "itHuaan ",
+  mobile : '15300001111',
+  password : "123456",
+  code : '123456',
   agree : true
 })
 const rules = {
@@ -43,18 +43,22 @@ const formRef = ref(null)
 const params = ref({
   mobile : userInfo.value.mobile
 })
-const getCode = async () => {
-  const res = await getCodeAPI(params.value)
-  userInfo.code = res.result.code
-  // userInfo.value.code = res.result.code
+const getcode = async () => {
+  const res = await userStore.getCode({
+    mobile : userInfo.value
+  })
+  userInfo.value.code = res.result.code
 }
-
 const doRegister = () => {
   const {account , mobile , password , code} = userInfo.value
   formRef.value.validate(async (valid) => {
     if (valid) {
-      await getRegisterAPI({userInfo})
-      await  userStore.getRegisterInfo({account , mobile , password , code})
+      await  userStore.getRegisterInfo({
+        account : account,
+        mobile : mobile,
+        password : password,
+        code : code
+      })
       // 1. 提示用户
       ElMessage({ type: 'success', message: '注册成功' })
       // 2. 跳转首页
@@ -62,7 +66,6 @@ const doRegister = () => {
     }
   })
 }
-onMounted(() => doRegister())
 
 </script>
 
@@ -102,7 +105,7 @@ onMounted(() => doRegister())
               </el-form-item>
               <el-form-item label="验证码" prop="code" label-width="70px">
                 <el-input v-model="userInfo.code" input-style="width : 120px"/>
-                <span ><el-button type="primary" size="small" style="margin-left: 50px" @click="getCode">获取验证码</el-button></span>
+                <span ><el-button type="primary" size="small" style="margin-left: 50px" @click="getcode">获取验证码</el-button></span>
               </el-form-item>
 
               <el-form-item label-width="22px" prop="agree">

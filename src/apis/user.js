@@ -3,7 +3,7 @@ import httpInstance from "@/utils/http";
 export const loginAPI = ({account , password}) => {
     return httpInstance({
         url : "/login",
-        method : "post",
+        method : "POST",
         data : {
             account,
             password
