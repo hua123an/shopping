@@ -1,5 +1,5 @@
 <script setup>
-import { ref , onMounted } from 'vue'
+import { ref  } from 'vue'
 import 'element-plus/theme-chalk/el-message.css'
 import {ElMessage} from "element-plus";
 import {useRouter} from "vue-router";
@@ -40,9 +40,6 @@ const rules = {
 const userStore = useUserStore()
 const formRef = ref(null)
 // get code
-const params = ref({
-  mobile : userInfo.value.mobile
-})
 const getcode = async () => {
   const res = await userStore.getCode({
     mobile : userInfo.value
