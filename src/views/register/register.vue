@@ -120,13 +120,7 @@ const doRegister = () => {
     <footer class="login-footer">
       <div class="container">
         <p>
-          <a href="javascript:;">关于我们</a>
-          <a href="javascript:;">帮助中心</a>
-          <a href="javascript:;">售后服务</a>
-          <a href="javascript:;">配送与验收</a>
-          <a href="javascript:;">商务合作</a>
-          <a href="javascript:;">搜索推荐</a>
-          <a href="javascript:;">友情链接</a>
+          <a href="https://hua123an.github.io">点击进去工具页</a>
         </p>
         <p>CopyRight &copy; itHuaan</p>
       </div>

@@ -98,7 +98,7 @@ const doLogin = () => {
     <footer class="login-footer">
       <div class="container">
         <p>
-          <a href="http://hua123an.github.io">点击进去工具页</a>
+          <a href="https://hua123an.github.io">点击进去工具页</a>
         </p>
         <p>CopyRight &copy; itHuaan</p>
       </div>
